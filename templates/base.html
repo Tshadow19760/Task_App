@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>Task Manager</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a href="{{ url_for('add') }}" class="nav-link">Add new</a></li>
+          <li class="nav-item"><a href="{{ url_for('task') }}" class="nav-link">Tasks</a></li>
+          <li class="nav-item"><a href="https://www.linkedin.com/in/temitope-oyebanji-8690762a3/" class="nav-link">LinkedIn Profile</a></li>
+          <li class="nav-item"><a href="https://www.coursera.org/my-learning?myLearningTab=IN_PROGRESS" class="nav-link">Coursera</a></li>
+          <li class="nav-item"><a href="https://mail.google.com/mail/u/0/#inbox" class="nav-link">Gmail</a></li>
+          <li class="nav-item"><a href="https://google.com" class="nav-link">Search Engine</a></li>
+          <li class="nav-item"><a href="https://github.com/Tshadow19760" class="nav-link">Github</a></li>
+        </ul>
+      </nav>
+      <br>
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+          <div class="alert alert-primary">
+            {{ message }}
+          </div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+      <br>
+
+      {% block main %}{% endblock %}
+    </div>
+  </body>
+</html>

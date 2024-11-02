@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>App Inventory</title>
+    </head>
+<body>
+    <h1>Task Manager</h1>
+    <h3>Subheader: Something something</h3>
+    <hr>
+    <ul>
+ <!--    <li><a href="title">Home Page</a></li>
+         <li><a href="title">Title Page</a></li> -->
+        <li><a href="title">Add new</a></li>
+        <li><a href="{{url_for('task') }}">Tasks Page</a></li>
+    </ul>
+
+     <p>Some content on the about page</p>
+     <form action="/about" method="post">
+        {{ form.csrf_token() }}
+        {{ form.title.label }}
+        {{ form.title }}
+        {{ form.submit }}
+     </form>
+</body>
+</html>

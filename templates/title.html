@@ -1,0 +1,21 @@
+{% extends "case.html" %}
+
+{% block main %}
+<p>Some content on the title page</p>
+<form action="url_for('task')" method="post">
+    {{ form.csrf_token() }}
+    {{ form.title }}
+    {{ form.submit }}
+ </form>
+
+{%  if title %}
+    <h1>{{ title }}</h1>
+{% endif %}
+
+<h1>Tasks</h1>
+<ul>
+    {% for task in tasks %}
+        <li>{{ task.title }} created on {{ task.date }} </li>
+    {% endfor %}
+</ul>
+{% endblock %}
